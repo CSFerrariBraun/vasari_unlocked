@@ -1,0 +1,4117 @@
+{
+    "type": "database",
+    "name": "Vasari-Original",
+    "objects": [
+        {
+            "type": "table",
+            "database": null,
+            "name": "Artistes_Général",
+            "withoutRowId": false,
+            "strict": false,
+            "ddl": "CREATE TABLE Artistes_Général (AG INTEGER PRIMARY KEY AUTOINCREMENT, \"AG_Nom\/Name\" TEXT, Vita INTEGER)",
+            "columns": [
+                {
+                    "name": "AG",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "AG_Nom\/Name",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "Vita",
+                    "type": "INTEGER"
+                }
+            ],
+            "rows": [
+                [
+                    1,
+                    "Andrea Tafi",
+                    1
+                ],
+                [
+                    2,
+                    "Andrea Pifano",
+                    2
+                ],
+                [
+                    3,
+                    "Andrea Orgagna",
+                    3
+                ],
+                [
+                    4,
+                    "Arnolfo Lapi",
+                    4
+                ],
+                [
+                    5,
+                    "Agoftino Sanefe",
+                    5
+                ],
+                [
+                    6,
+                    "Agnol Sanefe",
+                    6
+                ],
+                [
+                    7,
+                    "Ambrogio Lorenzetti",
+                    7
+                ],
+                [
+                    8,
+                    "Agnol Gaddi",
+                    null
+                ],
+                [
+                    9,
+                    "Antonio Venez",
+                    null
+                ],
+                [
+                    10,
+                    "Antonio Filarete",
+                    null
+                ],
+                [
+                    11,
+                    "Antonello da Mefsina",
+                    null
+                ],
+                [
+                    12,
+                    "Aleffo Baldouinetti",
+                    null
+                ],
+                [
+                    13,
+                    "Andrea del Caftagno",
+                    null
+                ],
+                [
+                    14,
+                    "Antonio Roffelino",
+                    null
+                ],
+                [
+                    15,
+                    "Antonio Pollaiuolo",
+                    null
+                ],
+                [
+                    16,
+                    "Andrea Verocchio",
+                    null
+                ],
+                [
+                    17,
+                    "Andrea Mantegna",
+                    null
+                ],
+                [
+                    18,
+                    "Andrea della Robbia",
+                    null
+                ],
+                [
+                    19,
+                    "Antonio Veneziano",
+                    null
+                ],
+                [
+                    20,
+                    "Antonio Paolo Vecello",
+                    null
+                ],
+                [
+                    21,
+                    "Antonio Polla",
+                    null
+                ],
+                [
+                    22,
+                    "Antonio Rossellino",
+                    null
+                ],
+                [
+                    23,
+                    "Antonio Veneziano",
+                    null
+                ],
+                [
+                    24,
+                    "Antonio Vite",
+                    null
+                ],
+                [
+                    25,
+                    "Antonello da Messina",
+                    null
+                ],
+                [
+                    26,
+                    "Andrea Riccio",
+                    null
+                ],
+                [
+                    27,
+                    "don Bartholomeo",
+                    null
+                ],
+                [
+                    28,
+                    "Bernardino Pinturicchio",
+                    null
+                ],
+                [
+                    29,
+                    "Buon'amico Buffalmaco",
+                    null
+                ],
+                [
+                    30,
+                    "Benozzo Fiorentino",
+                    null
+                ],
+                [
+                    31,
+                    "Bernardo Roffelino",
+                    null
+                ],
+                [
+                    32,
+                    "Berna Sanefe",
+                    null
+                ],
+                [
+                    33,
+                    "Benedetto da Maiano",
+                    null
+                ],
+                [
+                    34,
+                    "Cimabue",
+                    25
+                ],
+                [
+                    35,
+                    "Chimenti Camicia",
+                    null
+                ],
+                [
+                    36,
+                    "Cecca",
+                    null
+                ],
+                [
+                    37,
+                    "Cofimo Roffellino",
+                    null
+                ],
+                [
+                    38,
+                    "Duccio San.",
+                    null
+                ],
+                [
+                    39,
+                    "Domenica del Grillandaio",
+                    null
+                ],
+                [
+                    40,
+                    "Dello Fiorentino",
+                    null
+                ],
+                [
+                    41,
+                    "Defiderio da Settignano",
+                    null
+                ],
+                [
+                    42,
+                    "Donato Fiorentino",
+                    null
+                ],
+                [
+                    43,
+                    "F.  Philippo",
+                    null
+                ],
+                [
+                    44,
+                    "Fran.  Fran.",
+                    null
+                ],
+                [
+                    45,
+                    "Filippo Brun.",
+                    null
+                ],
+                [
+                    46,
+                    "Francefco Rofell",
+                    null
+                ],
+                [
+                    47,
+                    "Francefco Sanefe",
+                    null
+                ],
+                [
+                    48,
+                    "Filippino",
+                    null
+                ],
+                [
+                    49,
+                    "Gherardo",
+                    null
+                ],
+                [
+                    50,
+                    "Gentile da Fabriano",
+                    null
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Indice copioso delle cose piv notabili",
+            "withoutRowId": false,
+            "strict": false,
+            "ddl": "CREATE TABLE \"Indice copioso delle cose piv notabili\" (IND INTEGER PRIMARY KEY AUTOINCREMENT, \"Nom\/Name\" TEXT, Description TEXT, Profession TEXT REFERENCES Profession (P), Portrait INTEGER REFERENCES \"Tavola di Ritratti che sono nominati\" (R), Vita INTEGER, Section INTEGER REFERENCES Section (S), Page INTEGER REFERENCES Pages (P))",
+            "columns": [
+                {
+                    "name": "IND",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "Nom\/Name",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "Description",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "Profession",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Profession (P)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Portrait",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES \"Tavola di Ritratti che sono nominati\" (R)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Vita",
+                    "type": "INTEGER"
+                },
+                {
+                    "name": "Section",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Section (S)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Page",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Pages (P)"
+                        }
+                    ]
+                }
+            ],
+            "rows": [
+                [
+                    1,
+                    "Abate Gratiani dal Borgo",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2,
+                    null
+                ],
+                [
+                    2,
+                    "Adriano iiij",
+                    null,
+                    null,
+                    null,
+                    4,
+                    1,
+                    null
+                ],
+                [
+                    3,
+                    "Aefte fuoi signori",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1,
+                    null
+                ],
+                [
+                    4,
+                    "Agnolo Sanefe",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1,
+                    null
+                ],
+                [
+                    5,
+                    "Agnolo Gaddi",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1,
+                    null
+                ],
+                [
+                    6,
+                    "Agnolo Politiano",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1,
+                    null
+                ],
+                [
+                    7,
+                    "Agnolo di Donnino",
+                    null,
+                    "P1",
+                    null,
+                    null,
+                    2,
+                    null
+                ],
+                [
+                    8,
+                    "Agnolo di Polo",
+                    null,
+                    "P2",
+                    null,
+                    null,
+                    2,
+                    null
+                ],
+                [
+                    9,
+                    "Agnolo Acciaiuoli",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1,
+                    null
+                ],
+                [
+                    10,
+                    "Borgo Allegri",
+                    "in fioren.  pche cofi detto",
+                    null,
+                    null,
+                    25,
+                    1,
+                    null
+                ],
+                [
+                    11,
+                    "Dante",
+                    null,
+                    "P7",
+                    null,
+                    25,
+                    1,
+                    null
+                ],
+                [
+                    12,
+                    null,
+                    "Fefta fatta,& allegreza per una pittura di Cimabue",
+                    null,
+                    null,
+                    25,
+                    1,
+                    null
+                ],
+                [
+                    13,
+                    "Giotto",
+                    null,
+                    "P1",
+                    90,
+                    25,
+                    1,
+                    null
+                ],
+                [
+                    14,
+                    "Gio.  Cimabue",
+                    null,
+                    "P1",
+                    47,
+                    25,
+                    1,
+                    null
+                ],
+                [
+                    15,
+                    "Vincenzo Borghini",
+                    null,
+                    null,
+                    null,
+                    25,
+                    1,
+                    null
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Localisation_Générale",
+            "withoutRowId": false,
+            "strict": false,
+            "ddl": "CREATE TABLE Localisation_Générale (LG INTEGER PRIMARY KEY AUTOINCREMENT, \"LG_Nom\/Name\" TEXT)",
+            "columns": [
+                {
+                    "name": "LG",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "LG_Nom\/Name",
+                    "type": "TEXT"
+                }
+            ],
+            "rows": [
+                [
+                    1,
+                    "Ancona"
+                ],
+                [
+                    2,
+                    "Arezzo"
+                ],
+                [
+                    3,
+                    "Ascesi"
+                ],
+                [
+                    4,
+                    "Bologna"
+                ],
+                [
+                    5,
+                    "Borgo Sansepolcro"
+                ],
+                [
+                    6,
+                    "Castiglione Aretino"
+                ],
+                [
+                    7,
+                    "Cesena"
+                ],
+                [
+                    8,
+                    "Cortona Vescovado"
+                ],
+                [
+                    9,
+                    "Empoli"
+                ],
+                [
+                    10,
+                    "Faenza"
+                ],
+                [
+                    11,
+                    "Ferrara"
+                ],
+                [
+                    12,
+                    "Fiesole"
+                ],
+                [
+                    13,
+                    "Firenze"
+                ],
+                [
+                    14,
+                    "Fvligno"
+                ],
+                [
+                    15,
+                    "Fvrli"
+                ],
+                [
+                    16,
+                    "Lvcca"
+                ],
+                [
+                    17,
+                    "Mantova"
+                ],
+                [
+                    18,
+                    "Modana"
+                ],
+                [
+                    19,
+                    "Montepvlciano"
+                ],
+                [
+                    20,
+                    "Montevarchi"
+                ],
+                [
+                    21,
+                    "Monreale in Sicilia"
+                ],
+                [
+                    22,
+                    "Napoli"
+                ],
+                [
+                    23,
+                    "Orvieto"
+                ],
+                [
+                    24,
+                    "Padova"
+                ],
+                [
+                    25,
+                    "Parma"
+                ],
+                [
+                    26,
+                    "Pervgia"
+                ],
+                [
+                    27,
+                    "Pesaro"
+                ],
+                [
+                    28,
+                    "Pisa"
+                ],
+                [
+                    29,
+                    "Pistoia"
+                ],
+                [
+                    30,
+                    "Poppi"
+                ],
+                [
+                    31,
+                    "Prato"
+                ],
+                [
+                    32,
+                    "Ravenna"
+                ],
+                [
+                    33,
+                    "Rimini"
+                ],
+                [
+                    34,
+                    "Roma"
+                ],
+                [
+                    35,
+                    "San Gimignano"
+                ],
+                [
+                    36,
+                    "Siena"
+                ],
+                [
+                    37,
+                    "Tagliacozzo"
+                ],
+                [
+                    38,
+                    "Venetia"
+                ],
+                [
+                    39,
+                    "Verona"
+                ],
+                [
+                    40,
+                    "Viterbo"
+                ],
+                [
+                    41,
+                    "Volterra"
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Localisation_Spécifique",
+            "withoutRowId": false,
+            "strict": false,
+            "ddl": "CREATE TABLE Localisation_Spécifique (LS INTEGER PRIMARY KEY AUTOINCREMENT, \"LS_Nom\/Name\" TEXT, Latitude NUMERIC, Longitude NUMERIC, LS_Localisation_Générale INTEGER REFERENCES Localisation_Générale (LG))",
+            "columns": [
+                {
+                    "name": "LS",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "LS_Nom\/Name",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "Latitude",
+                    "type": "NUMERIC"
+                },
+                {
+                    "name": "Longitude",
+                    "type": "NUMERIC"
+                },
+                {
+                    "name": "LS_Localisation_Générale",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Localisation_Générale (LG)"
+                        }
+                    ]
+                }
+            ],
+            "rows": [
+                [
+                    1,
+                    "Duomo",
+                    43.467279817309574,
+                    11.883080483132604,
+                    2
+                ],
+                [
+                    2,
+                    "Pieve",
+                    43.469581781500544,
+                    11.883709460360059,
+                    2
+                ],
+                [
+                    3,
+                    "S.  Domenico",
+                    43.46905855879937,
+                    11.881766854247921,
+                    2
+                ],
+                [
+                    4,
+                    "S.  Francesco",
+                    43.464570475241274,
+                    11.880840308220906,
+                    2
+                ],
+                [
+                    5,
+                    "S.  Lorenzo",
+                    43.463738537728894,
+                    11.886159487407593,
+                    2
+                ],
+                [
+                    6,
+                    "S.  Ivstino ",
+                    43.55286444226327,
+                    11.708237950554453,
+                    2
+                ],
+                [
+                    7,
+                    "Compagnia dello Spirito Santo",
+                    43.73364483880579,
+                    11.022558984946986,
+                    2
+                ],
+                [
+                    8,
+                    "Compagnia de Paracchivoli",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    9,
+                    "S. Agostino",
+                    43.462636201405786,
+                    11.88267548308309,
+                    2
+                ],
+                [
+                    10,
+                    "S. Domenico ",
+                    43.46903519956583,
+                    11.881766854247934,
+                    2
+                ],
+                [
+                    11,
+                    "S. Bernardo",
+                    43.46086905804026,
+                    11.879498767740747,
+                    2
+                ],
+                [
+                    12,
+                    "S. Antonio",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    13,
+                    "S. Maria delle Grazie",
+                    43.45080315775272,
+                    11.882742138904643,
+                    2
+                ],
+                [
+                    14,
+                    "Duomo Vecchio",
+                    43.46129024600774,
+                    11.871328729862507,
+                    2
+                ],
+                [
+                    15,
+                    "La Fraternita",
+                    43.46527265693746,
+                    11.884094938905408,
+                    2
+                ],
+                [
+                    16,
+                    "S.  Piero",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    17,
+                    "Badia",
+                    43.465584083577,
+                    11.879416554962699,
+                    2
+                ],
+                [
+                    18,
+                    "Sargiano",
+                    43.43222280320861,
+                    11.857360711917034,
+                    2
+                ],
+                [
+                    19,
+                    "Duomo",
+                    null,
+                    null,
+                    3
+                ],
+                [
+                    20,
+                    "S.  Francesco",
+                    null,
+                    null,
+                    3
+                ],
+                [
+                    21,
+                    "S.  Chiara",
+                    null,
+                    null,
+                    3
+                ],
+                [
+                    22,
+                    "S.  Petronio",
+                    null,
+                    null,
+                    4
+                ],
+                [
+                    23,
+                    "S.  Domenico",
+                    null,
+                    null,
+                    4
+                ],
+                [
+                    24,
+                    "S.  Francesco",
+                    null,
+                    null,
+                    4
+                ],
+                [
+                    25,
+                    "Pieve",
+                    null,
+                    null,
+                    5
+                ],
+                [
+                    26,
+                    "Pieve",
+                    null,
+                    null,
+                    6
+                ],
+                [
+                    27,
+                    "Pieve",
+                    null,
+                    null,
+                    9
+                ],
+                [
+                    28,
+                    "Duomo",
+                    null,
+                    null,
+                    12
+                ],
+                [
+                    29,
+                    "S.  Domenico",
+                    null,
+                    null,
+                    12
+                ],
+                [
+                    30,
+                    "Duomo",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    31,
+                    "Campanile del Dvomo",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    32,
+                    "S.  Maria Novella",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    33,
+                    "Santa Croce",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    34,
+                    "S.  Giovanni",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    35,
+                    "S.  Spirito",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    36,
+                    "S.  Trinita",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    37,
+                    "Or S.  Michele",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    38,
+                    "Il Carmine",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    39,
+                    "Badia di Firenze",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    40,
+                    "S.  Maria Maggiore",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    41,
+                    "S.  Lorenzo",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    42,
+                    "Angeli",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    43,
+                    "S.  Maria Nvova",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    44,
+                    "La Nunziata de Servi",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    45,
+                    "S.  Pancrazio",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    46,
+                    "Ognisanti",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    47,
+                    "S.  Marco",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    48,
+                    "S.  Marco",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    49,
+                    "S.  Piermaggiore",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    50,
+                    "S.  Ambroggio",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    51,
+                    "S.  Francesco al Monte",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    52,
+                    "La Certosa",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    53,
+                    "Cestello di Firenze",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    54,
+                    "Camaldoli",
+                    null,
+                    null,
+                    13
+                ],
+                [
+                    55,
+                    "Duomo",
+                    null,
+                    null,
+                    14
+                ],
+                [
+                    56,
+                    "Duomo",
+                    null,
+                    null,
+                    16
+                ],
+                [
+                    58,
+                    "Duomo",
+                    null,
+                    null,
+                    26
+                ],
+                [
+                    59,
+                    "Duomo",
+                    null,
+                    null,
+                    28
+                ],
+                [
+                    60,
+                    "Duomo",
+                    "",
+                    "",
+                    29
+                ],
+                [
+                    61,
+                    "Duomo",
+                    null,
+                    null,
+                    32
+                ],
+                [
+                    62,
+                    "S.  Piero",
+                    null,
+                    null,
+                    34
+                ],
+                [
+                    63,
+                    "Pieve",
+                    null,
+                    null,
+                    35
+                ],
+                [
+                    64,
+                    "Duomo",
+                    null,
+                    null,
+                    36
+                ],
+                [
+                    65,
+                    "Duomo",
+                    null,
+                    null,
+                    41
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Pages",
+            "withoutRowId": false,
+            "strict": false,
+            "ddl": "CREATE TABLE Pages (PS INTEGER PRIMARY KEY AUTOINCREMENT, Page TEXT, Section INTEGER REFERENCES Section (S), Vita INTEGER REFERENCES \"Tavola delle Vite de gli Artefici\" (AV))",
+            "columns": [
+                {
+                    "name": "PS",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "Page",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "Section",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Section (S)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Vita",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES \"Tavola delle Vite de gli Artefici\" (AV)"
+                        }
+                    ]
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Profession",
+            "withoutRowId": false,
+            "strict": false,
+            "ddl": "CREATE TABLE Profession (P TEXT PRIMARY KEY ASC, \"Nom\/Name\" TEXT)",
+            "columns": [
+                {
+                    "name": "P",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY ASC"
+                        }
+                    ]
+                },
+                {
+                    "name": "Nom\/Name",
+                    "type": "TEXT"
+                }
+            ],
+            "rows": [
+                [
+                    "P1",
+                    "Pittore"
+                ],
+                [
+                    "P2",
+                    "Fcultore"
+                ],
+                [
+                    "P3",
+                    "Architettore"
+                ],
+                [
+                    "P4",
+                    "Ingegniere"
+                ],
+                [
+                    "P5",
+                    "Miniatore"
+                ],
+                [
+                    "P6",
+                    "Papa"
+                ],
+                [
+                    "P7",
+                    "Poeta"
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Section",
+            "withoutRowId": false,
+            "strict": false,
+            "ddl": "CREATE TABLE Section (S INTEGER PRIMARY KEY AUTOINCREMENT, \"Nom\/Name\" TEXT)",
+            "columns": [
+                {
+                    "name": "S",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "Nom\/Name",
+                    "type": "TEXT"
+                }
+            ],
+            "rows": [
+                [
+                    1,
+                    "Prima"
+                ],
+                [
+                    2,
+                    "Seconda"
+                ],
+                [
+                    3,
+                    "Terza - Vol.I"
+                ],
+                [
+                    4,
+                    "Terza - Vol.II"
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Tavola de Luoghi dove sono l'opere descritte",
+            "withoutRowId": false,
+            "strict": false,
+            "ddl": "CREATE TABLE \"Tavola de Luoghi dove sono l'opere descritte\" (L INTEGER PRIMARY KEY AUTOINCREMENT, L_Description TEXT, \"Attribution\/Artiste_1\" INTEGER REFERENCES Artistes_Général (AG), \"Attribution\/Artiste_2\" INTEGER REFERENCES Artistes_Général (AG), \"L_Localisation Spécifique\" INTEGER REFERENCES Localisation_Spécifique (LS), \"L_Localisation Générale\" INTEGER REFERENCES Localisation_Générale (LG), L_Section INTEGER REFERENCES Section (S), Vita INTEGER)",
+            "columns": [
+                {
+                    "name": "L",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "L_Description",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "Attribution\/Artiste_1",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Artistes_Général (AG)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Attribution\/Artiste_2",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Artistes_Général (AG)"
+                        }
+                    ]
+                },
+                {
+                    "name": "L_Localisation Spécifique",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Localisation_Spécifique (LS)"
+                        }
+                    ]
+                },
+                {
+                    "name": "L_Localisation Générale",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Localisation_Générale (LG)"
+                        }
+                    ]
+                },
+                {
+                    "name": "L_Section",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Section (S)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Vita",
+                    "type": "INTEGER"
+                }
+            ],
+            "rows": [
+                [
+                    1,
+                    "Il modello del palazzo del Gouernatore",
+                    "Margaritone Aretino",
+                    null,
+                    null,
+                    1,
+                    1,
+                    null
+                ],
+                [
+                    2,
+                    "S.  Chiariaco, il modello ",
+                    "Margaritone Aretino",
+                    null,
+                    null,
+                    1,
+                    1,
+                    null
+                ],
+                [
+                    3,
+                    "La Cappella di S.  Giofeppo",
+                    "Pier' della Francefaca",
+                    null,
+                    null,
+                    1,
+                    2,
+                    null
+                ],
+                [
+                    4,
+                    "S.  Niccola,  figure fopra l'altar maggiore",
+                    "Simone Memmi  (Simone, & Lippo Memmi)",
+                    "Lippo Memmi (Simone,& Lippo Memmi)",
+                    null,
+                    1,
+                    1,
+                    null
+                ],
+                [
+                    5,
+                    "S.  Aguftino,  fepoltura di f.  Zenone",
+                    "Moccio Sanefe",
+                    null,
+                    null,
+                    1,
+                    1,
+                    null
+                ],
+                [
+                    6,
+                    "Il modello",
+                    "Iacopo Tedefco",
+                    null,
+                    1,
+                    2,
+                    1,
+                    null
+                ],
+                [
+                    7,
+                    "Tauola dell'altar maggiore",
+                    "Giouanni Pifano",
+                    null,
+                    1,
+                    2,
+                    1,
+                    null
+                ],
+                [
+                    8,
+                    "La Cappella de Gozzari ",
+                    "L'Abbate",
+                    "",
+                    1,
+                    2,
+                    2,
+                    null
+                ],
+                [
+                    9,
+                    "La Cappella principale",
+                    "Iacopo di Cafent.",
+                    null,
+                    1,
+                    2,
+                    1,
+                    null
+                ],
+                [
+                    10,
+                    "Figure fopra la porta",
+                    "Nicc.  d'Arezzo",
+                    null,
+                    1,
+                    2,
+                    1,
+                    null
+                ],
+                [
+                    11,
+                    "Cappella de gli Vbertini",
+                    "Giouanni Pif.",
+                    null,
+                    1,
+                    2,
+                    1,
+                    null
+                ],
+                [
+                    12,
+                    "La fepoltura del Vefcouo Guido",
+                    5,
+                    6,
+                    1,
+                    2,
+                    1,
+                    null
+                ],
+                [
+                    13,
+                    "Vn Crocififlo grande",
+                    32,
+                    null,
+                    1,
+                    2,
+                    1,
+                    null
+                ],
+                [
+                    14,
+                    "Vna S.  Maria Maddalena allato alla sagreftia",
+                    "Pier' della Francefca",
+                    null,
+                    1,
+                    2,
+                    2,
+                    null
+                ],
+                [
+                    15,
+                    "Vn S.  Martino in vn pilaftro della Capp.  Maggiore",
+                    "Giotto",
+                    null,
+                    1,
+                    2,
+                    1,
+                    null
+                ],
+                [
+                    16,
+                    "Cappella del Battefimo",
+                    29,
+                    null,
+                    1,
+                    2,
+                    1,
+                    null
+                ],
+                [
+                    17,
+                    "Vna tauola nella Cappella di S.  Giorgio ",
+                    "Lippo Memmi",
+                    null,
+                    1,
+                    2,
+                    1,
+                    null
+                ],
+                [
+                    18,
+                    "Pitture diuerfe",
+                    34,
+                    null,
+                    20,
+                    3,
+                    1,
+                    25
+                ],
+                [
+                    19,
+                    "Vna tauola grande tra la capella de Bardi,& Rucell.",
+                    34,
+                    null,
+                    32,
+                    13,
+                    1,
+                    25
+                ],
+                [
+                    20,
+                    "Vn Crocififfo grande in legno",
+                    34,
+                    null,
+                    33,
+                    13,
+                    1,
+                    25
+                ],
+                [
+                    21,
+                    "Vn S.  Francefco con l'iftoria della fua uita",
+                    34,
+                    null,
+                    33,
+                    13,
+                    1,
+                    25
+                ],
+                [
+                    22,
+                    "Vna tau.  d'una N Donna appoggiata in un pilaftro",
+                    34,
+                    null,
+                    33,
+                    13,
+                    1,
+                    25
+                ],
+                [
+                    23,
+                    "Nel chioftro pitture diuerfe",
+                    34,
+                    null,
+                    35,
+                    13,
+                    1,
+                    25
+                ],
+                [
+                    24,
+                    "S.  ccilia.  il doffale dell'altare di s.  cci.",
+                    34,
+                    null,
+                    50,
+                    13,
+                    1,
+                    25
+                ],
+                [
+                    25,
+                    "Spedale della porcellana. le figure della facciata",
+                    34,
+                    null,
+                    50,
+                    13,
+                    1,
+                    25
+                ],
+                [
+                    26,
+                    "S.  Paolo a Ripa d'Arno.  vna s.  Agnefa,  con figure piccole intorno",
+                    34,
+                    null,
+                    59,
+                    28,
+                    1,
+                    25
+                ],
+                [
+                    27,
+                    "Vna tauola d'un fan Francefco",
+                    34,
+                    null,
+                    59,
+                    28,
+                    1,
+                    25
+                ],
+                [
+                    28,
+                    "vna N.  Donna col figlio in collo,& molti angeli",
+                    34,
+                    null,
+                    59,
+                    28,
+                    1,
+                    25
+                ],
+                [
+                    29,
+                    "vna tauola con un Chrifto in croce",
+                    34,
+                    null,
+                    59,
+                    28,
+                    1,
+                    25
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Tavola delle Vite de gli Artefici",
+            "withoutRowId": false,
+            "strict": false,
+            "ddl": "CREATE TABLE \"Tavola delle Vite de gli Artefici\" (AV INTEGER PRIMARY KEY AUTOINCREMENT, \"AV_Nom\/Name\" TEXT, Profession_1 TEXT REFERENCES Profession (P), Profession_2 TEXT REFERENCES Profession (P), Profession_3 TEXT REFERENCES Profession (P), Ritratti INTEGER, Page INTEGER REFERENCES Pages (P), AV_Section INTEGER REFERENCES Section (S))",
+            "columns": [
+                {
+                    "name": "AV",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "AV_Nom\/Name",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "Profession_1",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Profession (P)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Profession_2",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Profession (P)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Profession_3",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Profession (P)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Ritratti",
+                    "type": "INTEGER"
+                },
+                {
+                    "name": "Page",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Pages (P)"
+                        }
+                    ]
+                },
+                {
+                    "name": "AV_Section",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Section (S)"
+                        }
+                    ]
+                }
+            ],
+            "rows": [
+                [
+                    1,
+                    "Andrea Tafi",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    2,
+                    "Andrea Pifano",
+                    "P2",
+                    "P3",
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    3,
+                    "Andrea Orgagna",
+                    "P1",
+                    "P2",
+                    "P3",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    4,
+                    "Arnolfo Lapi",
+                    "P3",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    5,
+                    "Agoftino Sanefe",
+                    "P3",
+                    "P2",
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    6,
+                    "Agnol Sanefe",
+                    "P2",
+                    "P3",
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    7,
+                    "Ambrogio Lorenzetti",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    8,
+                    "Agnol Gaddi",
+                    "P1",
+                    null,
+                    null,
+                    1,
+                    null,
+                    1
+                ],
+                [
+                    9,
+                    "Antonio Venez",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    10,
+                    "Antonio Filarete",
+                    "P2",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    11,
+                    "Antonello da Mefsina",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    12,
+                    "Aleffo Baldouinetti",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    13,
+                    "Andrea del Caftagno",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    14,
+                    "Antonio Roffelino",
+                    "P2",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    15,
+                    "Antonio Pollaiuolo",
+                    "P1",
+                    "P2",
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    16,
+                    "Andrea Verocchio",
+                    "P1",
+                    "P2",
+                    "P3",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    17,
+                    "Andrea Mantegna",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    18,
+                    "don Bartholomeo",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    19,
+                    "Bernardino Pinturicchio",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    20,
+                    "Buon'amico Buffalmaco",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    21,
+                    "Benozzo Fiorentino",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    22,
+                    "Bernardo Roffelino",
+                    "P2",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    23,
+                    "Berna Sanefe",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    24,
+                    "Benedetto da Maiano",
+                    "P2",
+                    "P3",
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    25,
+                    "Cimabue",
+                    "P1",
+                    null,
+                    null,
+                    47,
+                    null,
+                    1
+                ],
+                [
+                    26,
+                    "Chimenti Camicia",
+                    "P2",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    27,
+                    "Cecca ",
+                    "P4",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    28,
+                    "Cofimo Roffellino",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    29,
+                    "Duccio San.",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    30,
+                    "Domenica del Grillandaio",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    31,
+                    "Dello Fiorentino",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    32,
+                    "Defiderio da Settignano",
+                    "P2",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    33,
+                    "Donato Fiorentino",
+                    "P2",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    34,
+                    "F.  Philippo ",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    35,
+                    "Fran.  Fran. ",
+                    "P1",
+                    "P2",
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    36,
+                    "Filippo Brun.",
+                    "P2",
+                    "P3",
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    37,
+                    "Francefco Rofell",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    38,
+                    "Francefco Sanefe",
+                    "P2",
+                    "P3",
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    39,
+                    "Filippino",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    40,
+                    "Gherardo",
+                    "P5",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    41,
+                    "Gentile da Fabriano",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    42,
+                    "Gentile Bellino",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    43,
+                    "Giouan Bellino",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    44,
+                    "f.  Gouanni ",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    45,
+                    "Giulian' da Maiano",
+                    "P2",
+                    "P3",
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    46,
+                    "Giotto",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    47,
+                    "Giouanni dal Ponte",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    48,
+                    "Giouanni Pifano",
+                    "P3",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    49,
+                    "Gaddo Gaddi",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    50,
+                    "Gherardo Starnina",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    51,
+                    "Hercole da Ferrara",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    52,
+                    "Iacopo di Cafentino",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    53,
+                    "Iacopo della Quercia",
+                    "P2",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    54,
+                    "Iacopo Indaco",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    55,
+                    "Iacopo Bellino",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    56,
+                    "Luca Signorelli",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    57,
+                    "Luca della Robbia",
+                    "P2",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    58,
+                    "Lippo Fiorentino",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    59,
+                    "Lorenzo Ghiberti",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    60,
+                    "Leon' Battifta Alberti ",
+                    "P3",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    61,
+                    "Lazzaro Vafari",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    62,
+                    "Lorenzo Vecchietti",
+                    "P2",
+                    "P3",
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    63,
+                    "Lorenzo Cofta",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    64,
+                    "Lorenzo di Bicci",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    65,
+                    "don Lorenzo",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    66,
+                    "Margaritone Aretino",
+                    "P1",
+                    "P2",
+                    "P3",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    67,
+                    "Mafolino",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    68,
+                    "Michelozzo Michelozzi",
+                    "P3",
+                    "P2",
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    69,
+                    "Mafaccio",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    70,
+                    "Mino da Fiefole",
+                    "P2",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    71,
+                    "Niccola Pifano",
+                    "P2",
+                    "P3",
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    72,
+                    "Niccola Aretino",
+                    "P2",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    73,
+                    "Nanni d'Antonio",
+                    "P2",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    74,
+                    "Pier' Laurati Sanefe",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    75,
+                    "Pier' Caualli",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    76,
+                    "Paolo Vccello",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    77,
+                    "Pier' Perugino",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    78,
+                    "Parri Spinelli",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    79,
+                    "Pier' della Francefca",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    80,
+                    "Paolo Romano",
+                    "P2",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    81,
+                    "Pier' Pollaiuolo",
+                    "P1",
+                    "P2",
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    82,
+                    "Pefello Pefelli",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    83,
+                    "Stephano Fiorentino",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    84,
+                    "Simon' Memmi",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    85,
+                    "Spinello Aretino",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    86,
+                    "Simone",
+                    "P2",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    87,
+                    "Sandro Botticelli",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    88,
+                    "Taddeo Gaddi",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    89,
+                    "Thomafo detto Giottino",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    90,
+                    "Taddeo Bartholi",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    91,
+                    "Vgolino Sanefe",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    92,
+                    "Villan' da Padoua",
+                    "P3",
+                    "P2",
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    93,
+                    "Vittore Pifanello Veronefe",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    94,
+                    "Vittore Scarpaccia",
+                    "P1",
+                    null,
+                    null,
+                    null,
+                    null,
+                    2
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Tavola di Ritratti che sono nominati",
+            "withoutRowId": false,
+            "strict": false,
+            "ddl": "CREATE TABLE \"Tavola di Ritratti che sono nominati\" (R INTEGER PRIMARY KEY AUTOINCREMENT, \"Nom\/Name\" TEXT, Vita INTEGER REFERENCES \"Tavola delle Vite de gli Artefici\" (AV), Page INTEGER REFERENCES Pages (PS), Section INTEGER REFERENCES Section (S))",
+            "columns": [
+                {
+                    "name": "R",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "Nom\/Name",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "Vita",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES \"Tavola delle Vite de gli Artefici\" (AV)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Page",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Pages (PS)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Section",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Section (S)"
+                        }
+                    ]
+                }
+            ],
+            "rows": [
+                [
+                    1,
+                    "Agnolo Gaddi",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    2,
+                    "Agnolo Acciaiuoli",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    3,
+                    "Agnolo poliuiano",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    4,
+                    "Aleffo Baldouinetti",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    5,
+                    "Aleffandro papa VI",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    6,
+                    "Alberto Magno",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    7,
+                    "Alfonfo Re di Napoli",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    8,
+                    "Amerigo Vefpucci",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    9,
+                    "Antonino Arciuefcouo, & fanto",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    10,
+                    "Antonio Brancacci",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    11,
+                    "Antonio Colonna",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    12,
+                    "Antonio Roffellino fcultore",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    13,
+                    "Antonio Pollaiuoli",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    14,
+                    "Argiropilo",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    15,
+                    "Andrea del Caftagno",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    16,
+                    "Arnolfo architettore",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    17,
+                    "Arrigo VII.  Re d'Inghilterra",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    18,
+                    "Baldaffare da Leccio",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    19,
+                    "Bartholomeo valori",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    20,
+                    "Bartholomeo d'Aluiano",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    21,
+                    "Bartholomeo Filifini",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    22,
+                    "Bartholomeo miniatore",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    23,
+                    "Battifta da Canneto",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    24,
+                    "Baftiano Mainardi",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    25,
+                    "Benedetto XI.  Papa",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    26,
+                    "Bernardino fanto da Siena",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    27,
+                    "Bernardetto de Medici",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    28,
+                    "Bernardo Guadagni",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    29,
+                    "Bernardo Fiorentino beato",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    30,
+                    "Benozzo pittore",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    31,
+                    "Beffarione Cardinale",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    32,
+                    "Bongianni Gianfil.",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    33,
+                    "Bocaccio",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    34,
+                    "Bonifazio Furimeliga",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    35,
+                    "Bonramino Caualiere",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    36,
+                    "Brunetto Latini",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    37,
+                    "Buoninfegna Fiorentino",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    38,
+                    "Carlo VII.  Re di Francia",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    39,
+                    "Carlo VIII.  Re di Francia",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    40,
+                    "Carlo d'Angiò",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    41,
+                    "Carlo Malarefta",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    42,
+                    "Carmignuola",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    43,
+                    "Caftruccio",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    44,
+                    "Caterina Regina",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    45,
+                    "Cecco d'Afcoli",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    46,
+                    "Chiaro beato",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    47,
+                    "Cimabue",
+                    25,
+                    null,
+                    1
+                ],
+                [
+                    48,
+                    "Cino da Piftoia",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    49,
+                    "Cofimo vecchio de Medici",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    50,
+                    "Cofimo Roffeli",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    51,
+                    "Corfo Donati",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    52,
+                    "Cofta pittore",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    53,
+                    "Chriftofano Landino",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    54,
+                    "Dante",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    55,
+                    "Dauitte Grillandaio",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    56,
+                    "Demetrio Greco",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    57,
+                    "Dello pittote",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    58,
+                    "Diotifalui Neroni",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    59,
+                    "Dino del Garbo",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    60,
+                    "Domenico Grillandaio",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    61,
+                    "Domenico Garganelli",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    62,
+                    "Donato fcultore",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    63,
+                    "Domenico fanto",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    64,
+                    "Donato Acciaiuoli",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    65,
+                    "Donato Roffeli",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    66,
+                    "Duchefia Bianca",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    67,
+                    "Ercole pittore",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    68,
+                    "Farinata vberti",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    69,
+                    "Farganaccio",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    70,
+                    "Federigo Imperadore",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    71,
+                    "Ferrante Re di Napoli",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    72,
+                    "Filippo di Sebrunella",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    73,
+                    "Filippo Strozzi,  il vecchio",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    74,
+                    "f.  Filippo pittore",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    75,
+                    "Filippo Lippi",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    76,
+                    "Filarete",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    77,
+                    "Folco Portinari",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    78,
+                    "Francefco Sforza",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    79,
+                    "Francefco Spinola",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    80,
+                    "Francefco Tornabene",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    81,
+                    "Francefco Gonzaga",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    82,
+                    "Francefco Granacci",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    83,
+                    "Gaddo Gaddi",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    84,
+                    "Galeotto Malatefti",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    85,
+                    "Gentile da Fabriano",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    86,
+                    "Gentile Bellini",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    87,
+                    "Gentile da Vrbino",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    88,
+                    "Gianozzo Manetti",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    89,
+                    "Gineura de Benci",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    90,
+                    "Giotto",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    91,
+                    "Gio. Vittellefchi",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    92,
+                    "Gio.  Domenico Card.",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    93,
+                    "Gio. Tornabuoni",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    94,
+                    "Gio.  di Cofi.  de Medici",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    95,
+                    "Gio.  Paolo Baglioni",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    96,
+                    "Gio.  Auolo del Duca Cofimo",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    97,
+                    "Gio.  di Bicci",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    98,
+                    "Giordano Beato",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    99,
+                    "Giorgio Cornaro",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    100,
+                    "Girolamo Riario",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    101,
+                    "Girolamo della Valle",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    102,
+                    "Giuliano de Medici",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    103,
+                    "Giuliano Nardi Aretino",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    104,
+                    "Giuliano Bacci",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    105,
+                    "Guidobaldo Duca d'Vrbino",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    106,
+                    "Gherardo Gianfigliazi",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    107,
+                    "Gregorio nono Papa",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    108,
+                    "Gran Turco",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    109,
+                    "Guccio di Gino",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    110,
+                    "Guardi",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    111,
+                    "Innocenzio IIII.  Papa",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    112,
+                    "Innocenzio VI.  Papa",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    113,
+                    "Innocenzio V.  Papa",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    114,
+                    "Iacopo Gianfigliazzi",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    115,
+                    "Iacopo pittore",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    116,
+                    "Iacopofilippo da Piacenza",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    117,
+                    "Ifabella Gonzaga",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    118,
+                    "Iulia Farnefe",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    119,
+                    "Lapo",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    120,
+                    "Laura del Petrarcha",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    121,
+                    "Leon Battifta Alberti",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    122,
+                    "Lionardo Aretino",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    123,
+                    "Lorenzo de Medici",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    124,
+                    "Lorenzo Giberti",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    125,
+                    "Lodouico Capponi",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    126,
+                    "Luca Pitti",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    127,
+                    "Luca da Canale",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    128,
+                    "Luigi Marfilij",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    129,
+                    "Luigi Pulci",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    130,
+                    "Luigi Guicciardini",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    131,
+                    "Marfilio Ficino",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    132,
+                    "Margaritone",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    133,
+                    "Martino V.  Papa",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    134,
+                    "Marfilio Pazzo ",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    135,
+                    "Mafolino da Panicale",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    136,
+                    "Mafo delli Albizi",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    137,
+                    "Marchefe di Mantoua",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    138,
+                    "Mantegna",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    139,
+                    "Mattheo Palmieri",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    140,
+                    "Michelozzo",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    141,
+                    "Mino da Fiefole",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    142,
+                    "Nanni di Banco",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    143,
+                    "Nicola da Prato Card.",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    144,
+                    "Nicola V.  Papa",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    145,
+                    "Nicolo Fortebraccio",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    146,
+                    "Nicolo da Vzano",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    147,
+                    "Nicolo Orefice",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    148,
+                    "Oratio Baglioni",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    149,
+                    "Ottobono da Parma",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    150,
+                    "Paolo Geometra",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    151,
+                    "Paolo Fiorentino Beato",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    152,
+                    "Paolo Guinigi",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    153,
+                    "Palla Strozzi",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    154,
+                    "Petrarcha",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    155,
+                    "Piero Traditi",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    156,
+                    "Piero Gambacorti",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    157,
+                    "Piero de Medici",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    158,
+                    "Pietro Benbo",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    159,
+                    "Pietro de Palude",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    160,
+                    "Piero Guicciardini",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    161,
+                    "Piero del Pugliefe",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    162,
+                    "Pico Mirandola",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    163,
+                    "Pippo Spano",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    164,
+                    "Poggio Fiorentino",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    165,
+                    "Raggio Senfale",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    166,
+                    "Raymondo",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    167,
+                    "Remigio Beato",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    168,
+                    "Rinaldo delli Albizi",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    169,
+                    "Sandro Botticelli",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    170,
+                    "Simone Memmi",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    171,
+                    "Sifto Papa IIII",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    172,
+                    "Spinello Aretino",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    173,
+                    "Spedalingo",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    174,
+                    "Starnina",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    175,
+                    "Tomafo d'Aquino fanto",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    176,
+                    "Thomafo Marzi",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    177,
+                    "Thomafo Soderini",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    178,
+                    "Vefcouo Vnghero",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    179,
+                    "Vincenzio Confefs.",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    180,
+                    "Vguccione della Faggiuola",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    181,
+                    "Vgo Cardinale",
+                    null,
+                    null,
+                    2
+                ],
+                [
+                    182,
+                    "Vrbano V.  Papa",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    183,
+                    "Vrbano VI",
+                    null,
+                    null,
+                    1
+                ],
+                [
+                    184,
+                    "Zanobi Stradi",
+                    null,
+                    null,
+                    2
+                ]
+            ]
+        },
+        {
+            "type": "view",
+            "database": null,
+            "name": "Cimabue - Oeuvres - Profil 1 - Non-raffiné",
+            "ddl": "CREATE VIEW \"Cimabue - Oeuvres - Profil 1 - Non-raffiné\" AS SELECT DISTINCT NULL, NULL, \"Localisation_Générale\", \"Localisation_Spécifique\", NULL FROM \"Tavola de Luoghi dove sono l'opere descritte\" WHERE NULL = 25",
+            "select": "SELECT DISTINCT NULL, NULL, \"Localisation_Générale\", \"Localisation_Spécifique\", NULL FROM \"Tavola de Luoghi dove sono l'opere descritte\" WHERE NULL = 25"
+        },
+        {
+            "type": "view",
+            "database": null,
+            "name": "Cimabue - Oeuvres - Profil 2 - Non-raffiné",
+            "ddl": "CREATE VIEW \"Cimabue - Oeuvres - Profil 2 - Non-raffiné\" AS SELECT DISTINCT NULL, NULL, \"Localisation_Générale\", \"Localisation_Spécifique\", NULL FROM \"Tavola de Luoghi dove sono l'opere descritte\" WHERE NULL = 34",
+            "select": "SELECT DISTINCT NULL, NULL, \"Localisation_Générale\", \"Localisation_Spécifique\", NULL FROM \"Tavola de Luoghi dove sono l'opere descritte\" WHERE NULL = 34"
+        },
+        {
+            "type": "view",
+            "database": null,
+            "name": "Localisation - Jointure - Générale et Spécifique - Limite 50 - Raffiner Noms",
+            "ddl": "CREATE VIEW \"Localisation - Jointure - Générale et Spécifique - Limite 50 - Raffiner Noms\" AS SELECT \"LS_Nom\/Name\", \"LG_Nom\/Name\"\nFROM Localisation_Spécifique\nJOIN Localisation_Générale LG\nON \"LG\" = \"LS_Localisation_Générale\"\nORDER BY \"LS_Nom\/Name\"\nLIMIT 50",
+            "select": "SELECT \"LS_Nom\/Name\", \"LG_Nom\/Name\"\nFROM Localisation_Spécifique\nJOIN Localisation_Générale LG\nON \"LG\" = \"LS_Localisation_Générale\"\nORDER BY \"LS_Nom\/Name\"\nLIMIT 50"
+        },
+        {
+            "type": "view",
+            "database": null,
+            "name": "Ordre alphabétique + Ordre de présentation - Tavola delle Vite de gli Artefici",
+            "ddl": "CREATE VIEW \"Ordre alphabétique + Ordre de présentation - Tavola delle Vite de gli Artefici\" AS SELECT DISTINCT AV, NULL FROM \"Tavola delle Vite de gli Artefici\" ORDER BY NULL, NULL ASC",
+            "select": "SELECT DISTINCT AV, NULL FROM \"Tavola delle Vite de gli Artefici\" ORDER BY NULL, NULL ASC"
+        },
+        {
+            "type": "view",
+            "database": null,
+            "name": "Vita - Indice copioso delle cose piv notabili - Test 1",
+            "ddl": "CREATE VIEW \"Vita - Indice copioso delle cose piv notabili - Test 1\" AS SELECT * \nFROM [Indice copioso delle cose piv notabili]\nJOIN [Tavola delle Vite de gli Artefici] AV\nON AV = Vita",
+            "select": "SELECT * \nFROM [Indice copioso delle cose piv notabili]\nJOIN [Tavola delle Vite de gli Artefici] AV\nON AV = Vita"
+        },
+        {
+            "type": "view",
+            "database": null,
+            "name": "Vita - Tavola de Luoghi - Test 3 - Raffiner - Cimabue",
+            "ddl": "CREATE VIEW \"Vita - Tavola de Luoghi - Test 3 - Raffiner - Cimabue\" AS SELECT \"L_Description\", \"AV_Nom\/Name\", \"L_Localisation Spécifique\", \"L_Localisation Générale\", \"AV_Section\", \"L_Section\"\nFROM [Tavola de Luoghi dove sono l'opere descritte]\nJOIN [Tavola delle Vite de gli Artefici] AV\nON AV = Vita",
+            "select": "SELECT \"L_Description\", \"AV_Nom\/Name\", \"L_Localisation Spécifique\", \"L_Localisation Générale\", \"AV_Section\", \"L_Section\"\nFROM [Tavola de Luoghi dove sono l'opere descritte]\nJOIN [Tavola delle Vite de gli Artefici] AV\nON AV = Vita"
+        },
+        {
+            "type": "view",
+            "database": null,
+            "name": "Vita - Tavola de Luoghi dove sono l'opere descritte  - Test 2",
+            "ddl": "CREATE VIEW \"Vita - Tavola de Luoghi dove sono l'opere descritte  - Test 2\" AS SELECT * \nFROM [Tavola de Luoghi dove sono l'opere descritte]\nJOIN [Tavola delle Vite de gli Artefici] AV\nON AV = Vita",
+            "select": "SELECT * \nFROM [Tavola de Luoghi dove sono l'opere descritte]\nJOIN [Tavola delle Vite de gli Artefici] AV\nON AV = Vita"
+        }
+    ]
+}

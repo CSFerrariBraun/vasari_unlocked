@@ -1,0 +1,543 @@
+{
+    "type": "database",
+    "name": "Vasari-Original",
+    "objects": [
+        {
+            "type": "table",
+            "database": null,
+            "name": "Artistes_Général",
+            "withoutRowId": false,
+            "strict": false,
+            "ddl": "CREATE TABLE Artistes_Général (AG INTEGER PRIMARY KEY AUTOINCREMENT, \"AG_Nom\/Name\" TEXT, Vita INTEGER)",
+            "columns": [
+                {
+                    "name": "AG",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "AG_Nom\/Name",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "Vita",
+                    "type": "INTEGER"
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Indice copioso delle cose piv notabili",
+            "withoutRowId": false,
+            "strict": false,
+            "ddl": "CREATE TABLE \"Indice copioso delle cose piv notabili\" (IND INTEGER PRIMARY KEY AUTOINCREMENT, \"Nom\/Name\" TEXT, Description TEXT, Profession TEXT REFERENCES Profession (P), Portrait INTEGER REFERENCES \"Tavola di Ritratti che sono nominati\" (R), Vita INTEGER, Section INTEGER REFERENCES Section (S), Page INTEGER REFERENCES Pages (P))",
+            "columns": [
+                {
+                    "name": "IND",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "Nom\/Name",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "Description",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "Profession",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Profession (P)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Portrait",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES \"Tavola di Ritratti che sono nominati\" (R)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Vita",
+                    "type": "INTEGER"
+                },
+                {
+                    "name": "Section",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Section (S)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Page",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Pages (P)"
+                        }
+                    ]
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Localisation_Générale",
+            "withoutRowId": false,
+            "strict": false,
+            "ddl": "CREATE TABLE Localisation_Générale (LG INTEGER PRIMARY KEY AUTOINCREMENT, \"LG_Nom\/Name\" TEXT)",
+            "columns": [
+                {
+                    "name": "LG",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "LG_Nom\/Name",
+                    "type": "TEXT"
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Localisation_Spécifique",
+            "withoutRowId": false,
+            "strict": false,
+            "ddl": "CREATE TABLE Localisation_Spécifique (LS INTEGER PRIMARY KEY AUTOINCREMENT, \"LS_Nom\/Name\" TEXT, Latitude NUMERIC, Longitude NUMERIC, LS_Localisation_Générale INTEGER REFERENCES Localisation_Générale (LG))",
+            "columns": [
+                {
+                    "name": "LS",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "LS_Nom\/Name",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "Latitude",
+                    "type": "NUMERIC"
+                },
+                {
+                    "name": "Longitude",
+                    "type": "NUMERIC"
+                },
+                {
+                    "name": "LS_Localisation_Générale",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Localisation_Générale (LG)"
+                        }
+                    ]
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Pages",
+            "withoutRowId": false,
+            "strict": false,
+            "ddl": "CREATE TABLE Pages (PS INTEGER PRIMARY KEY AUTOINCREMENT, Page TEXT, Section INTEGER REFERENCES Section (S), Vita INTEGER REFERENCES \"Tavola delle Vite de gli Artefici\" (AV))",
+            "columns": [
+                {
+                    "name": "PS",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "Page",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "Section",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Section (S)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Vita",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES \"Tavola delle Vite de gli Artefici\" (AV)"
+                        }
+                    ]
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Profession",
+            "withoutRowId": false,
+            "strict": false,
+            "ddl": "CREATE TABLE Profession (P TEXT PRIMARY KEY ASC, \"Nom\/Name\" TEXT)",
+            "columns": [
+                {
+                    "name": "P",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY ASC"
+                        }
+                    ]
+                },
+                {
+                    "name": "Nom\/Name",
+                    "type": "TEXT"
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Section",
+            "withoutRowId": false,
+            "strict": false,
+            "ddl": "CREATE TABLE Section (S INTEGER PRIMARY KEY AUTOINCREMENT, \"Nom\/Name\" TEXT)",
+            "columns": [
+                {
+                    "name": "S",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "Nom\/Name",
+                    "type": "TEXT"
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Tavola de Luoghi dove sono l'opere descritte",
+            "withoutRowId": false,
+            "strict": false,
+            "ddl": "CREATE TABLE \"Tavola de Luoghi dove sono l'opere descritte\" (L INTEGER PRIMARY KEY AUTOINCREMENT, L_Description TEXT, \"Attribution\/Artiste_1\" INTEGER REFERENCES Artistes_Général (AG), \"Attribution\/Artiste_2\" INTEGER REFERENCES Artistes_Général (AG), \"L_Localisation Spécifique\" INTEGER REFERENCES Localisation_Spécifique (LS), \"L_Localisation Générale\" INTEGER REFERENCES Localisation_Générale (LG), L_Section INTEGER REFERENCES Section (S), Vita INTEGER)",
+            "columns": [
+                {
+                    "name": "L",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "L_Description",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "Attribution\/Artiste_1",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Artistes_Général (AG)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Attribution\/Artiste_2",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Artistes_Général (AG)"
+                        }
+                    ]
+                },
+                {
+                    "name": "L_Localisation Spécifique",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Localisation_Spécifique (LS)"
+                        }
+                    ]
+                },
+                {
+                    "name": "L_Localisation Générale",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Localisation_Générale (LG)"
+                        }
+                    ]
+                },
+                {
+                    "name": "L_Section",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Section (S)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Vita",
+                    "type": "INTEGER"
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Tavola delle Vite de gli Artefici",
+            "withoutRowId": false,
+            "strict": false,
+            "ddl": "CREATE TABLE \"Tavola delle Vite de gli Artefici\" (AV INTEGER PRIMARY KEY AUTOINCREMENT, \"AV_Nom\/Name\" TEXT, Profession_1 TEXT REFERENCES Profession (P), Profession_2 TEXT REFERENCES Profession (P), Profession_3 TEXT REFERENCES Profession (P), Ritratti INTEGER, Page INTEGER REFERENCES Pages (P), AV_Section INTEGER REFERENCES Section (S))",
+            "columns": [
+                {
+                    "name": "AV",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "AV_Nom\/Name",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "Profession_1",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Profession (P)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Profession_2",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Profession (P)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Profession_3",
+                    "type": "TEXT",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Profession (P)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Ritratti",
+                    "type": "INTEGER"
+                },
+                {
+                    "name": "Page",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Pages (P)"
+                        }
+                    ]
+                },
+                {
+                    "name": "AV_Section",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Section (S)"
+                        }
+                    ]
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Tavola di Ritratti che sono nominati",
+            "withoutRowId": false,
+            "strict": false,
+            "ddl": "CREATE TABLE \"Tavola di Ritratti che sono nominati\" (R INTEGER PRIMARY KEY AUTOINCREMENT, \"Nom\/Name\" TEXT, Vita INTEGER REFERENCES \"Tavola delle Vite de gli Artefici\" (AV), Page INTEGER REFERENCES Pages (PS), Section INTEGER REFERENCES Section (S))",
+            "columns": [
+                {
+                    "name": "R",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "Nom\/Name",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "Vita",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES \"Tavola delle Vite de gli Artefici\" (AV)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Page",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Pages (PS)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Section",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Section (S)"
+                        }
+                    ]
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "view",
+            "database": null,
+            "name": "Cimabue - Oeuvres - Profil 1 - Non-raffiné",
+            "ddl": "CREATE VIEW \"Cimabue - Oeuvres - Profil 1 - Non-raffiné\" AS SELECT DISTINCT NULL, NULL, \"Localisation_Générale\", \"Localisation_Spécifique\", NULL FROM \"Tavola de Luoghi dove sono l'opere descritte\" WHERE NULL = 25",
+            "select": "SELECT DISTINCT NULL, NULL, \"Localisation_Générale\", \"Localisation_Spécifique\", NULL FROM \"Tavola de Luoghi dove sono l'opere descritte\" WHERE NULL = 25"
+        },
+        {
+            "type": "view",
+            "database": null,
+            "name": "Cimabue - Oeuvres - Profil 2 - Non-raffiné",
+            "ddl": "CREATE VIEW \"Cimabue - Oeuvres - Profil 2 - Non-raffiné\" AS SELECT DISTINCT NULL, NULL, \"Localisation_Générale\", \"Localisation_Spécifique\", NULL FROM \"Tavola de Luoghi dove sono l'opere descritte\" WHERE NULL = 34",
+            "select": "SELECT DISTINCT NULL, NULL, \"Localisation_Générale\", \"Localisation_Spécifique\", NULL FROM \"Tavola de Luoghi dove sono l'opere descritte\" WHERE NULL = 34"
+        },
+        {
+            "type": "view",
+            "database": null,
+            "name": "Localisation - Jointure - Générale et Spécifique - Limite 50 - Raffiner Noms",
+            "ddl": "CREATE VIEW \"Localisation - Jointure - Générale et Spécifique - Limite 50 - Raffiner Noms\" AS SELECT \"LS_Nom\/Name\", \"LG_Nom\/Name\"\nFROM Localisation_Spécifique\nJOIN Localisation_Générale LG\nON \"LG\" = \"LS_Localisation_Générale\"\nORDER BY \"LS_Nom\/Name\"\nLIMIT 50",
+            "select": "SELECT \"LS_Nom\/Name\", \"LG_Nom\/Name\"\nFROM Localisation_Spécifique\nJOIN Localisation_Générale LG\nON \"LG\" = \"LS_Localisation_Générale\"\nORDER BY \"LS_Nom\/Name\"\nLIMIT 50"
+        },
+        {
+            "type": "view",
+            "database": null,
+            "name": "Ordre alphabétique + Ordre de présentation - Tavola delle Vite de gli Artefici",
+            "ddl": "CREATE VIEW \"Ordre alphabétique + Ordre de présentation - Tavola delle Vite de gli Artefici\" AS SELECT DISTINCT AV, NULL FROM \"Tavola delle Vite de gli Artefici\" ORDER BY NULL, NULL ASC",
+            "select": "SELECT DISTINCT AV, NULL FROM \"Tavola delle Vite de gli Artefici\" ORDER BY NULL, NULL ASC"
+        },
+        {
+            "type": "view",
+            "database": null,
+            "name": "Vita - Indice copioso delle cose piv notabili - Test 1",
+            "ddl": "CREATE VIEW \"Vita - Indice copioso delle cose piv notabili - Test 1\" AS SELECT * \nFROM [Indice copioso delle cose piv notabili]\nJOIN [Tavola delle Vite de gli Artefici] AV\nON AV = Vita",
+            "select": "SELECT * \nFROM [Indice copioso delle cose piv notabili]\nJOIN [Tavola delle Vite de gli Artefici] AV\nON AV = Vita"
+        },
+        {
+            "type": "view",
+            "database": null,
+            "name": "Vita - Tavola de Luoghi - Test 3 - Raffiner - Cimabue",
+            "ddl": "CREATE VIEW \"Vita - Tavola de Luoghi - Test 3 - Raffiner - Cimabue\" AS SELECT \"L_Description\", \"AV_Nom\/Name\", \"L_Localisation Spécifique\", \"L_Localisation Générale\", \"AV_Section\", \"L_Section\"\nFROM [Tavola de Luoghi dove sono l'opere descritte]\nJOIN [Tavola delle Vite de gli Artefici] AV\nON AV = Vita",
+            "select": "SELECT \"L_Description\", \"AV_Nom\/Name\", \"L_Localisation Spécifique\", \"L_Localisation Générale\", \"AV_Section\", \"L_Section\"\nFROM [Tavola de Luoghi dove sono l'opere descritte]\nJOIN [Tavola delle Vite de gli Artefici] AV\nON AV = Vita"
+        },
+        {
+            "type": "view",
+            "database": null,
+            "name": "Vita - Tavola de Luoghi dove sono l'opere descritte  - Test 2",
+            "ddl": "CREATE VIEW \"Vita - Tavola de Luoghi dove sono l'opere descritte  - Test 2\" AS SELECT * \nFROM [Tavola de Luoghi dove sono l'opere descritte]\nJOIN [Tavola delle Vite de gli Artefici] AV\nON AV = Vita",
+            "select": "SELECT * \nFROM [Tavola de Luoghi dove sono l'opere descritte]\nJOIN [Tavola delle Vite de gli Artefici] AV\nON AV = Vita"
+        }
+    ]
+}
